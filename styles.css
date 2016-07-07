@@ -38,3 +38,8 @@ li {
   display: inline-block;
   margin-left: -1em;
 }
+
+.grid {
+  width: 500px;
+  height: 250px;
+}
