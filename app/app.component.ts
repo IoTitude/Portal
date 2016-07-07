@@ -12,7 +12,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
       ROUTER_DIRECTIVES,
       NavComponent,
       HeaderComponent,
-      SectionComponent
+      SectionComponent,    
     ]
     })
 
