@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'nav-component',
@@ -8,5 +8,11 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
       ROUTER_DIRECTIVES
     ]
 })
+export class NavComponent {
+  constructor (private router: Router) { }
 
-export class NavComponent { }
+  logout() {
+    // TODO: Remove session token from local storage
+    this.router.navigateByUrl('/login')
+  }
+}
