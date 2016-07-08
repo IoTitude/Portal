@@ -37,7 +37,9 @@ You need to add some mapping and packages to systemjs.config.js so Angular2 will
 
 Add ng2-table, ng2-bootstrap and moment to map and packages
 
+
 ```
+//systemjs.config.js
 var map = {
     'app':                        'app', // 'dist',
 
@@ -62,6 +64,8 @@ var packages = {
 first go to your grid app component (in our case ./app/app.kamulist.component.ts)
 Add following imports
 ```
+//app.kamulist.component.ts
+import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass, NgIf} from '@angular/common';
 import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap';
 import {NG_TABLE_DIRECTIVES}    from 'ng2-table';
 import {TableData} from './data/table-data'; //this is data storage for demo use
@@ -70,6 +74,7 @@ import {TableData} from './data/table-data'; //this is data storage for demo use
 also add these to @Component
 
   ```
+  //app.kamulist.component.ts
   NgClass,
   NG_TABLE_DIRECTIVES,
   PAGINATION_DIRECTIVES,
