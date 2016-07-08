@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {MD_CARD_DIRECTIVES} from '@angular2-material-card';
-import {MdButton} from '@angular2-material-button';
+import { CardComponent } from './card/card.component';
 
 @Component({
     selector: 'status-component',
     templateUrl: 'app/templates/status.html',
-    directives: [MD_CARD_DIRECTIVES, MdButton]
+    directives: [
+      CardComponent
+    ]
 })
 
 export class StatusComponent { }

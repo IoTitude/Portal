@@ -14,20 +14,18 @@
     'ng2-table':                  'node_modules/ng2-table',
     'ng2-bootstrap':              'node_modules/ng2-bootstrap',
     'moment':                     'node_modules/moment',
-    '@angular2-material-card':    'node_modules/@angular2-material/card',
-    '@angular2-material-button':  'node_modules/@angular2-material/button',
+    '@angular2-material':         'node_modules/@angular2-material'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'ng2-table': { main: 'ng2-table.js', defaultExtension: 'js' },
-    'ng2-bootstrap': { main: 'ng2-bootstrap.js', defaultExtension: 'js' },
-    'moment': { main: 'moment.js', defaultExtension: 'js' },
-    '@angular2-material-card': { main: 'card.js', defaultExtension: 'js' },
-    '@angular2-material-button': { main: 'button.js', defaultExtension: 'js' },
-
+    'ng2-table':                  { main: 'ng2-table.js', defaultExtension: 'js' },
+    'ng2-bootstrap':              { main: 'ng2-bootstrap.js', defaultExtension: 'js' },
+    'moment':                     { main: 'moment.js', defaultExtension: 'js' },
+    '@angular2-material-card':    { main: 'card.js', defaultExtension: 'js' },
+    '@angular2-material-button':  { main: 'button.js', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [
@@ -40,7 +38,14 @@
     'platform-browser-dynamic',
     'router',
     'router-deprecated',
-    'upgrade',
+    'upgrade'
+  ];
+
+  // Define material packages to add
+  var materialPkgs = [
+    'button',
+    'card',
+    'core'
   ];
 
   // Individual files (~300 requests):
@@ -58,6 +63,11 @@
 
   // Add package entries for angular packages
   ngPackageNames.forEach(setPackageConfig);
+
+  // Add package entries for material packages
+  materialPkgs.forEach((pkg) => {
+    packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+  });
 
   // No umd for router yet
   packages['@angular/router'] = { main: 'index.js', defaultExtension: 'js' };
