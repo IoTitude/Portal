@@ -86,3 +86,7 @@ also add these to @Component directives
   ```
 
 We have laid our template to seperate html file, which can be found in ./app/templates/kamulist.html
+
+## angular/material2
+
+[Getting started](https://github.com/angular/material2/blob/2.0.0-alpha.6/GETTING_STARTED.md)
