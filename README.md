@@ -75,6 +75,7 @@ also add these to @Component
   PAGINATION_DIRECTIVES,
   NgIf,
   CORE_DIRECTIVES,
-  FORM_DIRECTIVES```
+  FORM_DIRECTIVES
+  ```
 
 We have laid our template to seperate html file, which can be found in ./app/templates/kamulist.html
