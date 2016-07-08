@@ -71,16 +71,18 @@ import {NG_TABLE_DIRECTIVES}    from 'ng2-table';
 import {TableData} from './data/table-data'; //this is data storage for demo use
 ```
 
-also add these to @Component
+also add these to @Component directives
 
   ```
   //app.kamulist.component.ts
+  directives: [
   NgClass,
   NG_TABLE_DIRECTIVES,
   PAGINATION_DIRECTIVES,
   NgIf,
   CORE_DIRECTIVES,
   FORM_DIRECTIVES
+  ]
   ```
 
 We have laid our template to seperate html file, which can be found in ./app/templates/kamulist.html
