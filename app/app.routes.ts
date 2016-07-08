@@ -1,6 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { LoginComponent } from './app.login.component';
-import { SectionComponent }  from './app.section.component';
+import { StatusComponent }  from './app.status.component';
 import { KamuListComponent }  from './app.kamulist.component';
 import { DownloadComponent }  from './app.download.component';
 import { MainComponent } from './app.main.component';
@@ -18,7 +18,7 @@ export const routes: RouterConfig = [
       },
       {
         path: 'status',
-        component: SectionComponent
+        component: StatusComponent
       },
       {
         path: 'kamulist',

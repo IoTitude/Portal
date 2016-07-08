@@ -2,42 +2,91 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-}
+  }
 header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
+  background-color:black;
+  color:white;
+  text-align:center;
+  padding:5px;
+  }
 nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:100%;
-    width:100px;
-    float:left;
-    padding:5px;
-}
+  line-height:30px;
+  background-color:#eeeeee;
+  height:100%;
+  width:100px;
+  float:left;
+  padding:5px;
+  }
+
 section {
-    float:left;
-    padding:10px;
-}
+  padding: 10px;
+  }
+
+/*kamulist.html*/
+.kamulist-section {
+  float: left;
+  }
+
+
+.divider-1 {
+  float: left;
+  padding: 2em;
+  }
+
+.divider-2 {
+  float: right;
+  padding: 2em;
+  }
+
+.divider-3 {
+  float: right;
+  padding: 2em;
+  }
+
 footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;
-}
+  background-color:black;
+  color:white;
+  clear:both;
+  text-align:center;
+  padding:5px;
+  }
 
 ul {
   list-style-type: none;
-}
+  }
 
+/*navbar.html*/
 .navlist {
   display: inline-block;
   margin-left: -2em;
-}
+  }
 
 li {
   display: inline-block;
+  }
+
+  /*status.html*/
+.status-section {
+    min-width: 960px;
+  }
+
+md-card {
+  margin: 0 16px 16px 0;
+  max-width: 512px;
+  }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 2em;
+  }
+
+.blue {
+  background-color: #B0BECC;
+  }
+
+.blue md-card-actions {
+  display: flex;
+  flex-direction: row;
   }

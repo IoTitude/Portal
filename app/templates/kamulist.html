@@ -1,5 +1,7 @@
-<section>
+<section class="kamulist-section">
   <h1>KaMU list</h1>
+
+  <!-- list table -->
   <input *ngIf="config.filtering" placeholder="Filter"
        [ngTableFiltering]="config.filtering"
        (tableChanged)="onChangeTable(config)"/>
@@ -20,4 +22,5 @@
               (numPages)="numPages = $event">
   </pagination>
   <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+
 </section>
