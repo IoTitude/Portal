@@ -89,4 +89,33 @@ We have laid our template to seperate html file, which can be found in ./app/tem
 
 ## angular/material2
 
-[Getting started](https://github.com/angular/material2/blob/2.0.0-alpha.6/GETTING_STARTED.md)
+Angular/material2 provided a set of elements that follow Google's matrial design principles. In this project version 2.0.0-alpha.6 elements were used.
+
+Adding the needed elements to the project went as follows:
+
+- installed the elements via `npm install --save @angular2-material/core @angular2-material/button @angular2-material/card`
+- modified systemjs.config.js:
+
+```javascript
+// map to installed packages
+const map: any = {
+  ...
+  '@angular2-material': 'node_modules/@angular2-material'
+};
+
+...
+
+// Define material packages to add
+var materialPkgs = [
+  'button',
+  'card',
+  'core'
+];
+
+// Add package entries for material packages
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
+```
+
+Sources: [Getting started](https://github.com/angular/material2/blob/2.0.0-alpha.6/GETTING_STARTED.md)
