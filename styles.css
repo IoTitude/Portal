@@ -27,30 +27,6 @@ section {
   float: left;
   }
 
-
-.divider-1 {
-  float: left;
-  padding: 2em;
-  }
-
-.divider-2 {
-  float: right;
-  padding: 2em;
-  }
-
-.divider-3 {
-  float: right;
-  padding: 2em;
-  }
-
-footer {
-  background-color:black;
-  color:white;
-  clear:both;
-  text-align:center;
-  padding:5px;
-  }
-
 ul {
   list-style-type: none;
   }
@@ -75,7 +51,7 @@ md-card {
   max-width: 512px;
   }
 
-.card-container {
+status-component {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
