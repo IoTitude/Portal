@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavComponent } from './app.nav.component';
 import { HeaderComponent } from './app.header.component';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ProtectedDirective } from './app.protected.directive';
 
 @Component({
   selector: 'main-component',
@@ -9,7 +10,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   directives: [
     ROUTER_DIRECTIVES,
     NavComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProtectedDirective
   ]
 })
 export class MainComponent { }

@@ -27,6 +27,11 @@ export class BaasBoxService {
     return this.http.post(url, {}, { headers: this.getHeaders() }).toPromise()
   }
 
+  checkLogin() {
+    let url = this.baseUrl + '/me'
+    return this.http.get(url, { headers: this.getHeaders() }).toPromise()
+  }
+
   private getHeaders() {
     return new Headers({
       "X-BB-SESSION": localStorage.getItem('token'),
