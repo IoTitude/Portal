@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { BaasBoxService } from './app.baasbox.service';
 
 @Component({
     selector: 'nav-component',
@@ -8,13 +9,16 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
     directives: [
       ROUTER_DIRECTIVES,
       MD_BUTTON_DIRECTIVES
-    ]
+    ],
+    providers: [ BaasBoxService ]
 })
 export class NavComponent {
-  constructor (private router: Router) { }
+  constructor (private router: Router, private baasBoxService: BaasBoxService) { }
 
   logout() {
-    // TODO: Remove session token from local storage
+    this.baasBoxService.logout()
+      .then(() => localStorage.removeItem('token'))
+      .catch(error => alert(error))
     this.router.navigateByUrl('/login')
   }
 }

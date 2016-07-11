@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
+import { BaasBoxService } from './app.baasbox.service';
 import { Router } from '@angular/router';
-
-// Add library to convert observable to promise
-import 'rxjs/add/operator/toPromise';
 
 export class LoginData {
   username: string;
@@ -12,7 +9,8 @@ export class LoginData {
 
 @Component({
   selector: 'login-component',
-  templateUrl: 'app/templates/login.html'
+  templateUrl: 'app/templates/login.html',
+  providers: [ BaasBoxService ]
 })
 export class LoginComponent {
   data: LoginData = {
@@ -20,20 +18,17 @@ export class LoginComponent {
     password: ""
   }
 
-  // TODO: Add a BaasBoxService to handle all calls to the BaasBox REST API
-
-  constructor (private http: Http, private router: Router) { }
+  constructor (private router: Router, private baasBoxService: BaasBoxService) { }
 
   login(username: string, password: string) {
-    console.log(username);console.log(password);
-    this.http.post('http://82.196.14.4:9000/login', {"username": username, "password": password, "appcode": '1234567890'})
-      .toPromise()
+    this.baasBoxService.login(username, password)
       .then(response => {
         // Get session token
         let token = response.json().data['X-BB-SESSION']
-        console.log(token)
+        // TODO: Possibly handle storing in a service
+        localStorage.setItem("token", token)
         this.router.navigateByUrl('/status')
       })
-      .catch(error => console.log(error))
+      .catch(error => alert(error))
   }
 }
