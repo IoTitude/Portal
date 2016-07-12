@@ -12,7 +12,7 @@ export class BaasBoxService {
   baseUrl = 'http://82.196.14.4:9000'
   appcode = '1234567890'
 
-  login(username: string, password: string) {
+  login (username: string, password: string) {
     let url = this.baseUrl + '/login'
     let body = {
       "username": username,
@@ -22,13 +22,18 @@ export class BaasBoxService {
     return this.http.post(url, body).toPromise()
   }
 
-  logout() {
+  logout () {
     let url = this.baseUrl + '/logout'
     return this.http.post(url, {}, { headers: this.getHeaders() }).toPromise()
   }
 
-  checkLogin() {
+  checkLogin () {
     let url = this.baseUrl + '/me'
+    return this.http.get(url, { headers: this.getHeaders() }).toPromise()
+  }
+
+  getKamus() {
+    let url = this.baseUrl + '/documents/Master'
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
   }
 
