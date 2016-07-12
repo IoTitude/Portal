@@ -33,7 +33,7 @@ export class BaasBoxService {
   }
 
   getKamus() {
-    let url = this.baseUrl + '/documents/Master'
+    let url = this.baseUrl + '/document/Master'
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
   }
 

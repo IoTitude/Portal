@@ -18,28 +18,14 @@ export class KamuItemComponent {
 
   data: any = null
 
-  constructor() {
-    this.data =
-    {
-      "mac": "the-mac-address",
-      "hash": "hash-for-kaa",
-      "installer": "name-of-installer",
-      "installationDate": "date-of-installation",
-      "address": "location-of-installation",
-      "location": {
-        "long": "longitude",
-        "lat": "latitude"
-      },
-      "sensorHeight": 0,
-      "enabled": false,
-      "status": 1,
-      "swVersion": "version-of-current-software",
-      "sensors": {
-
-      },
-      "activeProfiles": [
-      ]
-    }
+  constructor (private baasBoxService: BaasBoxService) {
+    baasBoxService.getKamus()
+      .then(response => {
+        //console.log(response.json().data[0]))
+        this.data = response.json().data[0]
+        console.log(this.data)
+      })
+      .catch(error => alert(error))
   }
 
 }
