@@ -4,6 +4,7 @@ import { StatusComponent }  from './app.status.component';
 import { KamuListComponent }  from './app.kamulist.component';
 import { DownloadComponent }  from './app.download.component';
 import { MainComponent } from './app.main.component';
+import { KamuItemComponent } from './app.kamuitem.component';
 //Import more components here
 
 export const routes: RouterConfig = [
@@ -22,7 +23,11 @@ export const routes: RouterConfig = [
       },
       {
         path: 'kamulist',
-        component: KamuListComponent
+        component: KamuListComponent,
+      },
+      {
+        path: 'kamulist/:id',
+        component: KamuItemComponent,
       },
       {
         path: 'download',

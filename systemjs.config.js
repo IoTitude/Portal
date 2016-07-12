@@ -14,7 +14,8 @@
     'ng2-table':                  'node_modules/ng2-table',
     'ng2-bootstrap':              'node_modules/ng2-bootstrap',
     'moment':                     'node_modules/moment',
-    '@angular2-material':         'node_modules/@angular2-material'
+    '@angular2-material':         'node_modules/@angular2-material',
+    'ng2-material-selectable':    'node_modules/ng2-material/components/data-table'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -25,7 +26,8 @@
     'ng2-bootstrap':              { main: 'ng2-bootstrap.js', defaultExtension: 'js' },
     'moment':                     { main: 'moment.js', defaultExtension: 'js' },
     '@angular2-material-card':    { main: 'card.js', defaultExtension: 'js' },
-    '@angular2-material-button':  { main: 'button.js', defaultExtension: 'js' }
+    '@angular2-material-button':  { main: 'button.js', defaultExtension: 'js' },
+    'ng2-material-selectable':    { main: 'data_table_selectable_tr.js', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [
@@ -45,7 +47,8 @@
   var materialPkgs = [
     'button',
     'card',
-    'core'
+    'core',
+    'tabs'
   ];
 
   // Individual files (~300 requests):
