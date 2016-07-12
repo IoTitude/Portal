@@ -6,7 +6,7 @@
   <md-tab>
     <template md-tab-label>Update</template>
     <template md-tab-content>
-      <h1>Some tab content</h1>
+      <h1>Update KaMU to selected version</h1>
       <form>
         <select> <!-- How to automate fetching of version numbers (Jannes REST api)-->
          <option value="2016">2016</option>
@@ -22,17 +22,17 @@
   <md-tab>
     <template md-tab-label>Profile</template>
     <template md-tab-content>
-      <h1>Some more tab content</h1>
+      <h1>Select what profile(s) to use on KaMU</h1>
       <p>Current profile:</p>
       <p>Available profiles:</p>
-      <a md-button (click)="getMac()">Change profile(s)</a>
+      <a md-button (click)="profileKamu()">Change profile(s)</a>
     </template>
   </md-tab>
   <md-tab>
     <template md-tab-label>Delete</template>
     <template md-tab-content>
-      <h1>Some more tab content</h1>
-      <p>...</p>
+      <h1>Delete KaMU</h1>
+      <a md-button (click)="deleteKamu()">Delete</a>
     </template>
   </md-tab>
 </md-tab-group>

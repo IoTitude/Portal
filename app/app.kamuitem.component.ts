@@ -28,4 +28,31 @@ export class KamuItemComponent {
       .catch(error => alert(error))
   }
 
+  getMac(){
+    let mac = this.data['mac']
+    console.log(mac)
+  }
+
+  getId(){
+    let id = this.data['id']
+    console.log(id)
+  }
+
+  getStatus(){
+    let status = this.data['status']
+    console.log(status)
+  }
+
+  updateKamu() {
+    console.log("update KaMU")
+  }
+
+  deleteKamu() {
+    console.log("delete KaMU")
+  }
+
+  profileKamu() {
+    console.log("profile KaMU")
+  }
+
 }

@@ -37,6 +37,11 @@ export class BaasBoxService {
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
   }
 
+  getKaaVersio() {
+    let url = this.baseUrl + '/document/Versio' //check the right collection from Vesa
+    return this.http.get(url, { headers: this.getHeaders() }).toPromise()
+  }
+
   private getHeaders() {
     return new Headers({
       "X-BB-SESSION": localStorage.getItem('token'),
