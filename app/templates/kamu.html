@@ -8,7 +8,7 @@
     <template md-tab-content>
       <h1>Some tab content</h1>
       <form>
-        <select>
+        <select> <!-- How to automate fetching of version numbers (Jannes REST api)-->
          <option value="2016">2016</option>
          <option value="2015">2015</option>
          <option value="2014">2014</option>
@@ -16,7 +16,7 @@
         </select>
       </form>
       <p></p>
-      <a md-button>Update</a>
+      <a md-button (click)="updateKamu()">Update</a>
     </template>
   </md-tab>
   <md-tab>
@@ -25,7 +25,7 @@
       <h1>Some more tab content</h1>
       <p>Current profile:</p>
       <p>Available profiles:</p>
-      <a md-button>Change profile(s)</a>
+      <a md-button (click)="getMac()">Change profile(s)</a>
     </template>
   </md-tab>
   <md-tab>
