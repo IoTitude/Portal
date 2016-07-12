@@ -29,9 +29,12 @@ Checkout packages.json from this wiki for our setup and dependencies
 To get this working you need to have installed
 
 * Angular2...  
+* Angular2-material ```npm install --save @angular2-material/core @angular2-material/button @angular2-material/card```
 * ng2-bootstrap ```npm install --save ng2-bootstrap```  
 * ng2-table ```npm i ng2-table --save```  
 * moment ```npm install moment --save``` one that is supplied with angular 2 is not working as it should be)  
+
+
 
 You need to add some mapping and packages to systemjs.config.js so Angular2 will find required files
 
