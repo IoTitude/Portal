@@ -18,7 +18,7 @@ Start with `npm start`
 
 
 
-## How to install ng2-tables to Angular2 app
+## How to install our custom setup to Angular2 app
 
 Our Angular2 app uses routes to navigate to different pages so you need to know basics of routing in Angular2 to use this manual
 
@@ -28,10 +28,11 @@ but if you are adding ng2-tables to your own app here are all setups to get it r
 Checkout packages.json from this wiki for our setup and dependencies
 To get this working you need to have installed
 
-* Angular2...  
 * Angular2-material ```npm install --save @angular2-material/core @angular2-material/button @angular2-material/card```
 * ng2-bootstrap ```npm install --save ng2-bootstrap```  
 * ng2-table ```npm i ng2-table --save```  
+*  ```npm install --save ng2-material angular-ui-grid angular ```
+
 * moment ```npm install moment --save``` one that is supplied with angular 2 is not working as it should be)  
 
 
