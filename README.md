@@ -123,3 +123,20 @@ materialPkgs.forEach((pkg) => {
 ```
 
 Sources: [Getting started](https://github.com/angular/material2/blob/2.0.0-alpha.6/GETTING_STARTED.md)
+
+
+## How to modify ng2-table to allow html to table cells
+
+Navigate to node_modules/ng2-table/components/table/ng-table.component.js
+
+And edit row 84  
+
+from this  
+```
+<td *ngFor=\"let column of columns\">{{getData([innerHtml]=\"row, column.name\")}}</td>
+```  
+to this  
+```
+<td *ngFor=\"let column of columns\" [innerHtml]=\"row[column.name]\"></td>
+```  
+Now table can shows html correctly.
