@@ -21,7 +21,7 @@ export class Kamu {
   address: string
   location: Location
   sensorHeight: number
-  enabled: boolean
+  enabled: string
   status: number
   swVersion: string
   sensors: string[]
@@ -38,6 +38,7 @@ export class KamuService {
 
   // Update the list of all available kamus
   update () {
+    this.kamus = []
     this.baasBoxService.getKamus()
       .then(response => {
         let rawData = response.json().data
@@ -61,7 +62,7 @@ export class KamuService {
     kamu.address = rawKamu.address
     kamu.location = rawKamu.location
     kamu.sensorHeight = rawKamu.sensorHeight
-    kamu.enabled = rawKamu.enabled
+    kamu.enabled = rawKamu.enabled.toString()
     kamu.status = rawKamu.status
     kamu.swVersion = rawKamu.swVersion
     kamu.sensors = rawKamu.sensors

@@ -3,28 +3,29 @@ import {CORE_DIRECTIVES, NgClass, NgIf} from '@angular/common';
 import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap';
 import {NG_TABLE_DIRECTIVES}    from 'ng2-table';
 import {TableData} from './data/table-data';
-import { FORM_DIRECTIVES } from '@angular/forms'
+import { FORM_DIRECTIVES } from '@angular/forms';
+import { KamuService } from './app.kamu.service';
 
 @Component({
     selector: 'kamu-list-component',
     templateUrl: 'app/templates/kamulist.html',
     directives: [
-    NgClass,
-    KamuListComponent,
-    NG_TABLE_DIRECTIVES,
-    PAGINATION_DIRECTIVES,
-    NgIf,
-    CORE_DIRECTIVES,
-    FORM_DIRECTIVES
-]
+      NgClass,
+      KamuListComponent,
+      NG_TABLE_DIRECTIVES,
+      PAGINATION_DIRECTIVES,
+      NgIf,
+      CORE_DIRECTIVES,
+      FORM_DIRECTIVES
+    ]
 })
 export class KamuListComponent {
   public rows:Array<any> = [];
   public columns:Array<any> = [
-    {title: 'Name', name: 'name'},
+    {title: 'Name', name: 'url'},
     {title: 'Enabled', name: 'enabled', sort: false},
-    {title: 'Version', name: 'version', sort: 'asc'},
-    {title: 'Profile(s)', name: 'profile', sort: ''}
+    {title: 'Version', name: 'swVersion', sort: 'asc'},
+    {title: 'Profile(s)', name: 'activeProfiles', sort: ''}
   ];
   public page:number = 1;
   public itemsPerPage:number = 10;
@@ -38,14 +39,20 @@ export class KamuListComponent {
     filtering: {filterString: '', columnName: 'enabled'}
   };
 
-  private data:Array<any> = TableData;
+  private data2:Array<any> = TableData;
+  private data:Array<any> = this.kamuService.kamus;
 
-  public constructor() {
-    this.length = this.data.length;
+  public constructor(private kamuService: KamuService) {
+    if (!this.data.length) {
+      this.length = 0
+    } else {
+      this.length = this.data.length;
+    }
   }
 
   public ngOnInit():void {
     this.onChangeTable(this.config);
+    this.kamuService.update();
   }
 
   public changePage(page:any, data:Array<any> = this.data):Array<any> {
@@ -110,4 +117,5 @@ export class KamuListComponent {
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
     this.length = sortedData.length;
   }
+
 }

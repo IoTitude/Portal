@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BaasBoxService } from './app.baasbox.service';
 import { Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
+import { KamuService } from './app.kamu.service';
 
 export class LoginData {
   username: string;
@@ -19,7 +20,9 @@ export class LoginComponent {
     password: ""
   }
 
-  constructor (private router: Router, private baasBoxService: BaasBoxService) { }
+  constructor (private router: Router, private baasBoxService: BaasBoxService, private kamuService: KamuService) {
+
+  }
 
   login(username: string, password: string) {
     this.baasBoxService.login(username, password)
@@ -28,6 +31,7 @@ export class LoginComponent {
         let token = response.json().data['X-BB-SESSION']
         // TODO: Possibly handle storing in a service
         localStorage.setItem("token", token)
+        this.kamuService.update()
         this.router.navigateByUrl('/status')
       })
       .catch(error => alert(error))
