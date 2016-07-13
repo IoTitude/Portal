@@ -26,6 +26,7 @@ export class Kamu {
   swVersion: string
   sensors: string[]
   activeProfiles: string[]
+  url: string
 }
 
 @Injectable()
@@ -65,7 +66,12 @@ export class KamuService {
     kamu.swVersion = rawKamu.swVersion
     kamu.sensors = rawKamu.sensors
     kamu.activeProfiles = rawKamu.activeProfiles
+    kamu.url = this.parseUrl(kamu.mac)
 
     return kamu
+  }
+
+  private parseUrl (mac: string) {
+    return '<a href="/kamulist/' + mac + '">' + mac + '</a>'
   }
 }
