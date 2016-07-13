@@ -1,5 +1,14 @@
 # Portal service
 
+<!-- MDTOC maxdepth:6 firsth1:2 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
+
+- [Setup](#setup)   
+- [How to install our custom setup to Angular2 app](#how-to-install-our-custom-setup-to-angular2-app)   
+- [angular/material2](#angularmaterial2)   
+- [How to modify ng2-table to allow html to table cells](#how-to-modify-ng2-table-to-allow-html-to-table-cells)   
+
+<!-- /MDTOC -->
+
 ## Setup
 
 Install Node.js v6:
