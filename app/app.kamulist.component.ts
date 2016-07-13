@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass, NgIf} from '@angular/common';
+import {CORE_DIRECTIVES, NgClass, NgIf} from '@angular/common';
 import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap';
 import {NG_TABLE_DIRECTIVES}    from 'ng2-table';
 import {TableData} from './data/table-data';
-
-
+import { FORM_DIRECTIVES } from '@angular/forms'
 
 @Component({
     selector: 'kamu-list-component',
@@ -19,7 +18,6 @@ import {TableData} from './data/table-data';
     FORM_DIRECTIVES
 ]
 })
-
 export class KamuListComponent {
   public rows:Array<any> = [];
   public columns:Array<any> = [

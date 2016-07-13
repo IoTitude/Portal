@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaasBoxService } from './app.baasbox.service';
 import { Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
 
 export class LoginData {
   username: string;
@@ -10,7 +11,7 @@ export class LoginData {
 @Component({
   selector: 'login-component',
   templateUrl: 'app/templates/login.html',
-  providers: [ BaasBoxService ]
+  providers: [ BaasBoxService, NgModel ]
 })
 export class LoginComponent {
   data: LoginData = {
