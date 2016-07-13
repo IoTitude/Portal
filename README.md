@@ -140,12 +140,16 @@ Navigate to node_modules/ng2-table/components/table/ng-table.component.js
 
 And edit row 84  
 
-from this  
-```
-<td *ngFor=\"let column of columns\">{{getData([innerHtml]=\"row, column.name\")}}</td>
+from this:
+
+```html
+<td *ngFor=\"let column of columns\">{{getData(row, column.name)}}</td>\n
 ```  
-to this  
+
+to this:
+
+```html
+<td *ngFor=\"let column of columns\" [innerHtml]=\"row[column.name]\"></td>\n
 ```
-<td *ngFor=\"let column of columns\" [innerHtml]=\"row[column.name]\"></td>
-```  
+
 Now table can shows html correctly.
