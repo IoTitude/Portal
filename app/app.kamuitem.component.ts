@@ -6,6 +6,7 @@ import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
 import { BaasBoxService } from './app.baasbox.service';
 import { SELECT_DIRECTIVES } from './app.ng2-select';
 import { KamuService } from './app.kamu.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'kamu-component',
@@ -29,9 +30,14 @@ import { KamuService } from './app.kamu.service';
 })
 export class KamuItemComponent {
 
-  data: any = null
+  data: any = null;
+  mac: string = "";
 
-  constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService) {
+  constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService, private route: ActivatedRoute) {
+    route.params.subscribe(params => {
+      this.mac = params['id'];
+    })
+
     baasBoxService.getKamus()
       .then(response => {
         //console.log(response.json().data[0]))
