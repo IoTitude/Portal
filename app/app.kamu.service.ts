@@ -33,12 +33,14 @@ export class Kamu {
 export class KamuService {
 
   kamus: Kamu[] = []
+  //versions: string = ""
 
   constructor (private baasBoxService: BaasBoxService) { }
 
   // Update the list of all available kamus
   update () {
     this.kamus = []
+    // this.versions = ""
     this.baasBoxService.getKamus()
       .then(response => {
         let rawData = response.json().data
@@ -48,6 +50,7 @@ export class KamuService {
         }
       })
       .catch(error => alert(error))
+      this.getVersions()
   }
 
   // Parse Kamu from raw kamu data
@@ -73,6 +76,22 @@ export class KamuService {
   }
 
   private parseUrl (mac: string) {
-    return '<a href="/kamulist/' + mac + '">' + mac + '</a>'
+    //return '<a href="/kamulist/' + mac + '">' + mac + '</a>'
+    return '<a [routerLink]="[\'/kamulist/' + mac + '\']">' + mac + '</a>'
+  }
+
+  private getVersions () {
+    var strTemp: string = ""
+    this.baasBoxService.getVersions()
+      .then(response => {
+        let rawData = response.json().data
+        // Parse kamu data from response data.
+        for (let rawVersion of rawData) {
+          strTemp += rawVersion.number + ","
+          console.log(strTemp)
+        }
+        localStorage.setItem("versions", strTemp)
+      })
+      .catch (error => alert(error))
   }
 }

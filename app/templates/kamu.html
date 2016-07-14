@@ -24,6 +24,24 @@
     <template md-tab-content>
       <h1>Select what profile(s) to use on KaMU</h1>
       <p>Current profile:</p>
+      <div style="width: 300px; margin-bottom: 20px;">
+        <h3>Select multiple cities</h3>
+        <ng-select [data]="value"
+                    [multiple]="true"
+                    [items]="items"
+                    [disabled]="disabled"
+                    (data)="refreshValue($event)"
+                    (selected)="selected($event)"
+                    (removed)="removed($event)"
+                    placeholder="No city selected">
+         </ng-select>
+        <!--<pre>{{itemsToString(value)}}</pre>-->
+        <div>
+
+
+
+        </div>
+      </div>
       <p>Available profiles:</p>
       <a md-button (click)="profileKamu()">Change profile(s)</a>
     </template>

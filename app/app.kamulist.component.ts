@@ -2,14 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {CORE_DIRECTIVES, NgClass, NgIf} from '@angular/common';
 import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap';
 import {NG_TABLE_DIRECTIVES}    from 'ng2-table';
-import {TableData} from './data/table-data';
 import { FORM_DIRECTIVES } from '@angular/forms';
 import { KamuService } from './app.kamu.service';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'kamu-list-component',
     templateUrl: 'app/templates/kamulist.html',
     directives: [
+      ROUTER_DIRECTIVES,
       NgClass,
       KamuListComponent,
       NG_TABLE_DIRECTIVES,
@@ -20,13 +21,19 @@ import { KamuService } from './app.kamu.service';
     ]
 })
 export class KamuListComponent {
+
+  kamus: any[] = [];
   public rows:Array<any> = [];
   public columns:Array<any> = [
-    {title: 'Name', name: 'url'},
+    {title: 'Name', name: 'mac'},
     {title: 'Enabled', name: 'enabled', sort: false},
     {title: 'Version', name: 'swVersion', sort: 'asc'},
     {title: 'Profile(s)', name: 'activeProfiles', sort: ''}
   ];
+
+  /*
+      ng2-table
+      */
   public page:number = 1;
   public itemsPerPage:number = 10;
   public maxSize:number = 5;
@@ -39,10 +46,10 @@ export class KamuListComponent {
     filtering: {filterString: '', columnName: 'enabled'}
   };
 
-  private data2:Array<any> = TableData;
   private data:Array<any> = this.kamuService.kamus;
 
   public constructor(private kamuService: KamuService) {
+    this.kamus = kamuService.kamus;
     if (!this.data.length) {
       this.length = 0
     } else {
@@ -116,6 +123,13 @@ export class KamuListComponent {
     let sortedData = this.changeSort(filteredData, this.config);
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
     this.length = sortedData.length;
-  }
+}
 
+  /*
+      Table for POC use
+
+
+  public getRows(private kamuService: KamuService) {
+    let rowTemp:Array<string>;
+  }*/
 }

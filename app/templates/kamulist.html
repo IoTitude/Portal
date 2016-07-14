@@ -1,7 +1,31 @@
 <section class="kamulist-section">
   <h1>KaMU list</h1>
+  <!-- Table for POC purpose-->
 
-  <!-- list table -->
+  <table class="table" role="grid" style="width: 100%;">
+    <thead>
+      <tr role="row">
+        <th *ngFor="let column of columns">
+          {{column.title}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor= "let kamu of kamus">
+        <td><a [routerLink]="['/kamulist/' + kamu.mac ]">{{ kamu.mac }}</a></td>
+        <td>{{ kamu.enabled }}</td>
+        <td>{{ kamu.enabled }}</td>
+        <td>{{ kamu.enabled }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <!-- ng2-table -->
+  <p>
+    Ng2-table was in too early development stage to be used, but offered a lot of useful features out of the box.<br>
+    This might change when new versions are introducted.
+  </p>
   <input *ngIf="config.filtering" placeholder="Filter"
        [ngTableFiltering]="config.filtering"
        (tableChanged)="onChangeTable(config)"/>
@@ -22,5 +46,7 @@
               (numPages)="numPages = $event">
   </pagination>
   <pre *ngIf="config.paging" class="card card-block card-header">Page: {{page}} / {{numPages}}</pre>
+
+
 
 </section>
