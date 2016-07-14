@@ -37,9 +37,14 @@ export class BaasBoxService {
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
   }
 
-  getKaaVersio() {
-    let url = this.baseUrl + '/document/Versio' //check the right collection from Vesa
+  getVersions() {
+    let url = this.baseUrl + '/document/Version'
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
+  }
+
+  updateVersion (kamu: any) {
+    let url = this.baseUrl + '/plugin/portal.updateSoftware'
+    return this.http.put(url, kamu, { headers: this.getHeaders() }).toPromise()
   }
 
   private getHeaders() {
