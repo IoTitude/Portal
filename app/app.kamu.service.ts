@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from '@angular/core'
-import { BaasBoxService } from './baasbox.service'
+import { BaasBoxService } from './services/baasbox.service'
 
 export class Location {
   long: string
@@ -50,7 +50,7 @@ export class KamuService {
         }
       })
       .catch(error => alert(error))
-      this.getVersions()
+      this.versions = this.getVersions()
   }
 
   // Parse Kamu from raw kamu data
@@ -86,7 +86,7 @@ export class KamuService {
       .then(response => {
         let rawData = response.json().data
         // Parse kamu data from response data.
-        /*
+/*
         for (let rawVersion of rawData) {
           strTemp += rawVersion.number + ","
           console.log(strTemp)
@@ -94,21 +94,8 @@ export class KamuService {
         localStorage.setItem("versions", strTemp)
         */
         console.log(rawData)
-        this.versions = rawData
+        return rawData
       })
       .catch (error => alert(error))
-  }
-
-  getKamu (kamuMac: string) {
-    if (this.kamus.length) {
-      for (let kamu of this.kamus) {
-        if (kamu.mac === kamuMac) {
-          return kamu
-        }
-      }
-      alert("Kamu not found with this mac!")
-    } else {
-      alert("Kamulist is empty!")
-    }
   }
 }

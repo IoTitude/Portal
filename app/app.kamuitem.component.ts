@@ -33,11 +33,15 @@ import { KamuService, Kamu } from './services/kamu.service';
 export class KamuItemComponent {
 
   kamu: Kamu
+  versions: any
+  filledVersions: any
 
   constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService, private route: ActivatedRoute) {
     route.params.subscribe(params => {
       this.kamu = kamuService.getKamu(params['id'])
-    })
+          })
+    this.versions = kamuService.versions
+    console.log(this.versions)
   }
 
   updateKamu() {
@@ -52,7 +56,7 @@ export class KamuItemComponent {
     console.log("profile KaMU")
   }
 
-}
+};
 
 export class MultipleDemoComponent {
   public items:Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',

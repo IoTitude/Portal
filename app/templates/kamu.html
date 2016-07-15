@@ -9,11 +9,8 @@
     <template md-tab-content>
       <h1>Update KaMU to selected version</h1>
       <form>
-        <select> <!-- How to automate fetching of version numbers (Jannes REST api)-->
-         <option value="2016">2016</option>
-         <option value="2015">2015</option>
-         <option value="2014">2014</option>
-         <option value="2013">2013</option>
+        <select>
+          <option *ngFor= "let version of versions">{{version.number}}</option>
         </select>
       </form>
       <p></p>
