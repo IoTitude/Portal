@@ -50,7 +50,7 @@ export class KamuService {
         }
       })
       .catch(error => alert(error))
-      this.getVersions()
+    this.getVersions()
   }
 
   // Parse Kamu from raw kamu data
@@ -93,5 +93,18 @@ export class KamuService {
         localStorage.setItem("versions", strTemp)
       })
       .catch (error => alert(error))
+  }
+
+  getKamu (kamuMac: string) {
+    if (this.kamus.length) {
+      for (let kamu of this.kamus) {
+        if (kamu.mac === kamuMac) {
+          return kamu
+        }
+      }
+      alert("Kamu not found with this mac!")
+    } else {
+      alert("Kamulist is empty!")
+    }
   }
 }

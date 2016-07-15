@@ -31,11 +31,11 @@ import { ActivatedRoute } from '@angular/router';
 export class KamuItemComponent {
 
   data: any = null;
-  mac: string = "";
+  kamu: any = "";
 
   constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService, private route: ActivatedRoute) {
     route.params.subscribe(params => {
-      this.mac = params['id'];
+      this.kamu = kamuService.getKamu(params['id'])
     })
 
     baasBoxService.getKamus()
