@@ -1,6 +1,6 @@
 import { Directive } from '@angular/core';
 import { Router } from '@angular/router';
-import { BaasBoxService } from './services/baasbox.service';
+import { BaasBoxService } from '../services/baasbox.service';
 
 @Directive( {
   selector: '[protected]',
