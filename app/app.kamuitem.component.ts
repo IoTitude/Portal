@@ -3,10 +3,12 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from '@angular/common'; //va
 import { BUTTON_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap'
 import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { BaasBoxService } from './services/baasbox.service';
-//import { SELECT_DIRECTIVES } from './app.ng2-select';
-import { KamuService } from './services/kamu.service';
 import { ActivatedRoute } from '@angular/router';
+import { BaasBoxService } from './services/baasbox.service';
+import { KamuService, Kamu } from './services/kamu.service';
+//import { SELECT_DIRECTIVES } from './app.ng2-select';
+
+
 
 @Component({
     selector: 'kamu-component',
@@ -30,36 +32,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class KamuItemComponent {
 
-  data: any = null;
-  kamu: any = "";
+  kamu: Kamu
 
   constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService, private route: ActivatedRoute) {
     route.params.subscribe(params => {
       this.kamu = kamuService.getKamu(params['id'])
     })
-
-    baasBoxService.getKamus()
-      .then(response => {
-        //console.log(response.json().data[0]))
-        this.data = response.json().data[0]
-        console.log(this.data)
-      })
-      .catch(error => alert(error))
-  }
-
-  getMac(){
-    let mac = this.data['mac']
-    console.log(mac)
-  }
-
-  getId(){
-    let id = this.data['id']
-    console.log(id)
-  }
-
-  getStatus(){
-    let status = this.data['status']
-    console.log(status)
   }
 
   updateKamu() {
