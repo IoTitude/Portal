@@ -3,7 +3,7 @@ import {CORE_DIRECTIVES, NgClass, NgIf} from '@angular/common';
 import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap';
 import {NG_TABLE_DIRECTIVES}    from 'ng2-table';
 import { FORM_DIRECTIVES } from '@angular/forms';
-import { KamuService } from './app.kamu.service';
+import { KamuService } from './services/kamu.service';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({

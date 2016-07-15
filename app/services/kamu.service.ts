@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from '@angular/core'
-import { BaasBoxService } from './app.baasbox.service'
+import { BaasBoxService } from './baasbox.service'
 
 export class Location {
   long: string

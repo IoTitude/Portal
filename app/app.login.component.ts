@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { BaasBoxService } from './app.baasbox.service';
+import { BaasBoxService } from './services/baasbox.service';
 import { Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
-import { KamuService } from './app.kamu.service';
+import { KamuService } from './services/kamu.service';
 
 export class LoginData {
   username: string;

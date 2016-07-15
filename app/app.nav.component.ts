@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { BaasBoxService } from './app.baasbox.service';
+import { BaasBoxService } from './services/baasbox.service';
 
 @Component({
     selector: 'nav-component',

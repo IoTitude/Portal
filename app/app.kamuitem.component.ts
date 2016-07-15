@@ -3,9 +3,9 @@ import { CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from '@angular/common'; //va
 import { BUTTON_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap'
 import { MD_TABS_DIRECTIVES } from '@angular2-material/tabs';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { BaasBoxService } from './app.baasbox.service';
-import { SELECT_DIRECTIVES } from './app.ng2-select';
-import { KamuService } from './app.kamu.service';
+import { BaasBoxService } from './services/baasbox.service';
+//import { SELECT_DIRECTIVES } from './app.ng2-select';
+import { KamuService } from './services/kamu.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router';
     directives: [
       MD_TABS_DIRECTIVES,
       MD_BUTTON_DIRECTIVES,
-      SELECT_DIRECTIVES,
+      //SELECT_DIRECTIVES,
       NgClass,
       CORE_DIRECTIVES,
       FORM_DIRECTIVES,
