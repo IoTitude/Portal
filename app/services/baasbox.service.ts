@@ -47,9 +47,22 @@ export class BaasBoxService {
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
   }
 
-  updateVersion (kamu: any) {
+  updateVersion (kamu: any, datetime: string) {
     let url = this.baseUrl + '/plugin/portal.updateSoftware'
-    return this.http.put(url, kamu, { headers: this.getHeaders() }).toPromise()
+    let body = {
+      kamu: kamu,
+      datetime: datetime
+    }
+    return this.http.put(url, body, { headers: this.getHeaders() }).toPromise()
+  }
+
+  updateProfile (kamu: any, datetime: string) {
+    let url = this.baseUrl + '/plugin/portal.updateProfile'
+    let body = {
+      kamu: kamu,
+      datetime: datetime
+    }
+    return this.http.put(url, body, { headers: this.getHeaders() }).toPromise()
   }
 
   private getHeaders() {

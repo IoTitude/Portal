@@ -50,10 +50,15 @@ export class KamuItemComponent {
 
   updateKamu() {
     if (this.updateVersion == "") {
-    console.log("Select version")
+      alert("Select version")
     }
     else {
-    console.log(this.updateVersion);
+      this.kamu.swVersion = this.updateVersion
+      // TODO: Move datetime to form
+      let datetime = "15-07-2016T12:00:00"
+      this.baasBoxService.updateVersion(this.kamu, datetime)
+        .then(response => console.log(response))
+        .catch(error => alert(error))
     }
   }
 
@@ -63,10 +68,15 @@ export class KamuItemComponent {
 
   profileKamu() {
     if (this.changeProfile == "") {
-    console.log("Select profile")
+      alert("Select profile")
     }
     else {
-    console.log(this.updateVersion);
+      this.kamu.activeProfile = this.changeProfile
+      // TODO: Move datetime to form
+      let datetime = "15-07-2016T12:00:00"
+      this.baasBoxService.updateProfile(this.kamu, datetime)
+        .then(response => console.log(response))
+        .catch(error => alert(error))
     }
   }
 
