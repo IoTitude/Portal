@@ -23,19 +23,14 @@ import { KamuService, Kamu } from './services/kamu.service';
       BUTTON_DIRECTIVES
     ],
     providers: [ BaasBoxService ],
-    properties: [
-      'allowClear',
-      'placeholder',
-      'items',
-      'multiple',
-      'showSearchInputInDropdown']
 })
 export class KamuItemComponent {
 
   kamu: Kamu
   versions: any
   profiles: any
-  filledVersions: any
+  updateVersion: any
+  changeProfile: any
 
   constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService, private route: ActivatedRoute) {
     route.params.subscribe(params => {
@@ -44,62 +39,38 @@ export class KamuItemComponent {
     this.versions = kamuService.versions
     this.profiles = kamuService.profiles
     console.log(this.versions)
+    console.log(this.kamu.activeProfile)
+    this.updateVersion = ""
+    this.changeProfile = ""
+  }
+
+  updateChange(deviceValue: any) {
+    this.updateVersion = deviceValue
   }
 
   updateKamu() {
-    console.log("update KaMU")
+    if (this.updateVersion == "") {
+    console.log("Select version")
+    }
+    else {
+    console.log(this.updateVersion);
+    }
+  }
+
+  profileChange(deviceValue: any) {
+    this.changeProfile = deviceValue
+  }
+
+  profileKamu() {
+    if (this.changeProfile == "") {
+    console.log("Select profile")
+    }
+    else {
+    console.log(this.updateVersion);
+    }
   }
 
   deleteKamu() {
     console.log("delete KaMU")
   }
-
-  profileKamu() {
-    console.log("profile KaMU")
-  }
-
 };
-
-export class MultipleDemoComponent {
-  public items:Array<string> = ['Amsterdam', 'Antwerp', 'Athens', 'Barcelona',
-    'Berlin', 'Birmingham', 'Bradford', 'Bremen', 'Brussels', 'Bucharest',
-    'Budapest', 'Cologne', 'Copenhagen', 'Dortmund', 'Dresden', 'Dublin', 'Düsseldorf',
-    'Essen', 'Frankfurt', 'Genoa', 'Glasgow', 'Gothenburg', 'Hamburg', 'Hannover',
-    'Helsinki', 'Leeds', 'Leipzig', 'Lisbon', 'Łódź', 'London', 'Kraków', 'Madrid',
-    'Málaga', 'Manchester', 'Marseille', 'Milan', 'Munich', 'Naples', 'Palermo',
-    'Paris', 'Poznań', 'Prague', 'Riga', 'Rome', 'Rotterdam', 'Seville', 'Sheffield',
-    'Sofia', 'Stockholm', 'Stuttgart', 'The Hague', 'Turin', 'Valencia', 'Vienna',
-    'Vilnius', 'Warsaw', 'Wrocław', 'Zagreb', 'Zaragoza'];
-
-  private value:any = ['Athens'];
-  private _disabledV:string = '0';
-  private disabled:boolean = false;
-
-  private get disabledV():string {
-    return this._disabledV;
-  }
-
-  private set disabledV(value:string) {
-    this._disabledV = value;
-    this.disabled = this._disabledV === '1';
-  }
-
-  public selected(value:any):void {
-    console.log('Selected value is: ', value);
-  }
-
-  public removed(value:any):void {
-    console.log('Removed value is: ', value);
-  }
-
-  public refreshValue(value:any):void {
-    this.value = value;
-  }
-
-  public itemsToString(value:Array<any> = []):string {
-    return value
-      .map((item:any) => {
-      return item.text;
-    }).join(',');
-  }
-}

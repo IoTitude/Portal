@@ -25,7 +25,7 @@ export class Kamu {
   status: number
   swVersion: string
   sensors: string[]
-  activeProfiles: string[]
+  activeProfile: string
   url: string
 }
 
@@ -72,7 +72,7 @@ export class KamuService {
     kamu.status = rawKamu.status
     kamu.swVersion = rawKamu.swVersion
     kamu.sensors = rawKamu.sensors
-    kamu.activeProfiles = rawKamu.activeProfiles
+    kamu.activeProfile = rawKamu.activeProfile
     kamu.url = this.parseUrl(kamu.mac)
 
     return kamu

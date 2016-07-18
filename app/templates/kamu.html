@@ -9,7 +9,8 @@
     <template md-tab-content>
       <h1>Update KaMU to selected version</h1>
       <form>
-        <select>
+        <select (change)="updateChange($event.target.value)">
+          <option value=""></option>
           <option *ngFor= "let version of versions">{{version.number}}</option>
         </select>
       </form>
@@ -21,21 +22,21 @@
     <template md-tab-label>Profile</template>
     <template md-tab-content>
       <h1>Select what profile(s) to use on KaMU</h1>
-      <p>Current profile:</p>
-      <div style="width: 300px; margin-bottom: 20px;">
-        <form>
+        <p>Current profile:</p>
+         <form>
           <select>
+            <option value="{{kamu.activeProfile}}">{{kamu.activeProfile}}</option>
+          </select>
+        </form>
+      <div>
+        <p>Available profiles:</p>
+        <form>
+          <select (change)="profileChange($event.target.value)">
+            <option value=""></option>
             <option *ngFor= "let profile of profiles">{{profile.name}}</option>
           </select>
         </form>
-        <!--<pre>{{itemsToString(value)}}</pre>-->
-        <div>
-
-
-
-        </div>
       </div>
-      <p>Available profiles:</p>
       <a md-button (click)="profileKamu()">Change profile(s)</a>
     </template>
   </md-tab>
