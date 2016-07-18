@@ -34,13 +34,15 @@ export class KamuService {
 
   kamus: Kamu[] = []
   versions: any
+  profiles: any
 
   constructor (private baasBoxService: BaasBoxService) { }
 
   // Update the list of all available kamus
   update () {
     this.kamus = []
-    // this.versions = ""
+    this.versions = []
+    this.profiles = []
     this.baasBoxService.getKamus()
       .then(response => {
         let rawData = response.json().data
@@ -51,6 +53,7 @@ export class KamuService {
       })
       .catch(error => alert(error))
       this.getVersions()
+      this.getProfiles()
   }
 
   // Parse Kamu from raw kamu data
@@ -97,6 +100,15 @@ export class KamuService {
         this.versions = rawData
       })
       .catch (error => alert(error))
+  }
+
+  private getProfiles () {
+    this.baasBoxService.getProfiles()
+      .then(response => {
+        let rawData = response.json().data
+        this.profiles = rawData
+      })
+      .catch(error => alert(error))
   }
 
   getKamu (kamuMac: string) {

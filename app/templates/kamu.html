@@ -23,16 +23,11 @@
       <h1>Select what profile(s) to use on KaMU</h1>
       <p>Current profile:</p>
       <div style="width: 300px; margin-bottom: 20px;">
-        <h3>Select multiple cities</h3>
-        <ng-select [data]="value"
-                    [multiple]="true"
-                    [items]="items"
-                    [disabled]="disabled"
-                    (data)="refreshValue($event)"
-                    (selected)="selected($event)"
-                    (removed)="removed($event)"
-                    placeholder="No city selected">
-         </ng-select>
+        <form>
+          <select>
+            <option *ngFor= "let profile of profiles">{{profile.name}}</option>
+          </select>
+        </form>
         <!--<pre>{{itemsToString(value)}}</pre>-->
         <div>
 

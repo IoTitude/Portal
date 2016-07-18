@@ -34,6 +34,7 @@ export class KamuItemComponent {
 
   kamu: Kamu
   versions: any
+  profiles: any
   filledVersions: any
 
   constructor (private baasBoxService: BaasBoxService, private kamuService: KamuService, private route: ActivatedRoute) {
@@ -41,6 +42,7 @@ export class KamuItemComponent {
       this.kamu = kamuService.getKamu(params['id'])
           })
     this.versions = kamuService.versions
+    this.profiles = kamuService.profiles
     console.log(this.versions)
   }
 
