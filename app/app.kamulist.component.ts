@@ -33,7 +33,7 @@ export class KamuListComponent {
 
   /*
       ng2-table
-      */
+  */
   public page:number = 1;
   public itemsPerPage:number = 10;
   public maxSize:number = 5;
@@ -98,7 +98,7 @@ export class KamuListComponent {
       }
       return 0;
     });
-  }
+    }
 
   public changeFilter(data:any, config:any):any {
     if (!config.filtering) {
@@ -123,13 +123,5 @@ export class KamuListComponent {
     let sortedData = this.changeSort(filteredData, this.config);
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
     this.length = sortedData.length;
-}
-
-  /*
-      Table for POC use
-
-
-  public getRows(private kamuService: KamuService) {
-    let rowTemp:Array<string>;
-  }*/
+  }
 }
