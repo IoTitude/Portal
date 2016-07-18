@@ -42,6 +42,11 @@ export class BaasBoxService {
     return this.http.get(url, { headers: this.getHeaders() }).toPromise()
   }
 
+  getProfiles() {
+    let url = this.baseUrl + '/document/Profile'
+    return this.http.get(url, { headers: this.getHeaders() }).toPromise()
+  }
+
   updateVersion (kamu: any) {
     let url = this.baseUrl + '/plugin/portal.updateSoftware'
     return this.http.put(url, kamu, { headers: this.getHeaders() }).toPromise()
