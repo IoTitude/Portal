@@ -8,6 +8,7 @@
     <template md-tab-label>Update</template>
     <template md-tab-content>
       <h1>Update KaMU to selected version</h1>
+      <p>Current software version: {{ kamu.swVersion }}</p>
       <form>
         <select (change)="updateChange($event.target.value)">
           <option value=""></option>
