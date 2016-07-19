@@ -78,30 +78,23 @@ export class KamuService {
     return kamu
   }
 
+  // create a router link that's used in the kamu list
   private parseUrl (mac: string) {
-    //return '<a href="/kamulist/' + mac + '">' + mac + '</a>'
     return '<a [routerLink]="[\'/kamulist/' + mac + '\']">' + mac + '</a>'
   }
 
+  // Get available versions
   private getVersions () {
     var strTemp: string = ""
     this.baasBoxService.getVersions()
       .then(response => {
         let rawData = response.json().data
-        // Parse kamu data from response data.
-        /*
-        for (let rawVersion of rawData) {
-          strTemp += rawVersion.number + ","
-          console.log(strTemp)
-        }
-        localStorage.setItem("versions", strTemp)
-        */
-        console.log(rawData)
         this.versions = rawData
       })
       .catch (error => alert(error))
   }
 
+  // Get available profiles
   private getProfiles () {
     this.baasBoxService.getProfiles()
       .then(response => {
@@ -111,6 +104,7 @@ export class KamuService {
       .catch(error => alert(error))
   }
 
+  // Get a KaMU from the array of KaMUs held by this service
   getKamu (kamuMac: string) {
     if (this.kamus.length) {
       for (let kamu of this.kamus) {

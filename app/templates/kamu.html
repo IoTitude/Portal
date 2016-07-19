@@ -10,13 +10,13 @@
       <h1>Update KaMU to selected version</h1>
       <p>Current software version: {{ kamu.swVersion }}</p>
       <form>
-        <select (change)="updateChange($event.target.value)">
+        <select (change)="setNewVersion($event.target.value)">
           <option value=""></option>
           <option *ngFor= "let version of versions">{{version.number}}</option>
         </select>
       </form>
       <p></p>
-      <a md-button (click)="updateKamu()">Update</a>
+      <a md-button (click)="updateVersion()">Update</a>
     </template>
   </md-tab>
   <md-tab>
@@ -32,13 +32,13 @@
       <div>
         <p>Available profiles:</p>
         <form>
-          <select (change)="profileChange($event.target.value)">
+          <select (change)="setNewProfile($event.target.value)">
             <option value=""></option>
             <option *ngFor= "let profile of profiles">{{profile.name}}</option>
           </select>
         </form>
       </div>
-      <a md-button (click)="profileKamu()">Change profile(s)</a>
+      <a md-button (click)="updateProfile()">Change profile(s)</a>
     </template>
   </md-tab>
   <md-tab>

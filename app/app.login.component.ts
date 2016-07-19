@@ -1,3 +1,9 @@
+/*
+ * Login component
+ *
+ * Handles the login of a user.
+ */
+
 import { Component } from '@angular/core';
 import { BaasBoxService } from './services/baasbox.service';
 import { Router } from '@angular/router';
@@ -24,6 +30,7 @@ export class LoginComponent {
 
   }
 
+  // Login user
   login(username: string, password: string) {
     this.baasBoxService.login(username, password)
       .then(response => {

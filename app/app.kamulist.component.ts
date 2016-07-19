@@ -1,3 +1,9 @@
+/*
+ * KamuList component
+ *
+ * Displays all available KaMUs for further interaction.
+ */
+
 import {Component, OnInit} from '@angular/core';
 import {CORE_DIRECTIVES, NgClass, NgIf} from '@angular/common';
 import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap';
@@ -62,6 +68,7 @@ export class KamuListComponent {
     this.kamuService.update();
   }
 
+  // Pagination page change
   public changePage(page:any, data:Array<any> = this.data):Array<any> {
     console.log(page);
     let start = (page.page - 1) * page.itemsPerPage;
@@ -69,6 +76,7 @@ export class KamuListComponent {
     return data.slice(start, end);
   }
 
+  // Table sort
   public changeSort(data:any, config:any):any {
     if (!config.sorting) {
       return data;
@@ -100,6 +108,7 @@ export class KamuListComponent {
     });
     }
 
+  // Filer update
   public changeFilter(data:any, config:any):any {
     if (!config.filtering) {
       return data;
@@ -111,6 +120,7 @@ export class KamuListComponent {
     return filteredData;
   }
 
+  // Change table view
   public onChangeTable(config:any, page:any = {page: this.page, itemsPerPage: this.itemsPerPage}):any {
     if (config.filtering) {
       Object.assign(this.config.filtering, config.filtering);

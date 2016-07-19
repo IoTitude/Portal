@@ -1,3 +1,7 @@
+/*
+ * Component for creating status cards of the various services linked to the portal
+ */
+
 import { Component } from '@angular/core';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 

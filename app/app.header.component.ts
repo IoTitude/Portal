@@ -1,3 +1,9 @@
+/*
+ * Header component
+ *
+ * Provides the header bar component of the layout.
+ */
+
 import { Component } from '@angular/core';
 
 @Component({

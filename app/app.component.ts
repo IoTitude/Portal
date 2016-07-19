@@ -1,8 +1,13 @@
+/*
+ * Main application component
+ *
+ * This component ties all the others together.
+ */
+
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './app.login.component';
 import { MainComponent } from './app.main.component';
-import { RouterOutlet } from '@angular/router';
-
 
 @Component({
   selector: 'my-app',

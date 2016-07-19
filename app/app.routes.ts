@@ -1,3 +1,9 @@
+/*
+ * Routes for the application
+ *
+ * Provides the paths used by the application.
+ */
+
 import { provideRouter, RouterConfig } from '@angular/router';
 import { LoginComponent } from './app.login.component';
 import { StatusComponent }  from './app.status.component';
@@ -35,6 +41,7 @@ export const routes: RouterConfig = [
       }
     ]
   },
+  // Having login here enables the separation of login and layout
   {
     path: 'login',
     component: LoginComponent

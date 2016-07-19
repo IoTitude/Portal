@@ -1,3 +1,9 @@
+/*
+ * Main
+ *
+ * Used for starting the project.
+ */
+
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { AppComponent } from './app.component';
 import { APP_ROUTER_PROVIDERS } from './app.routes';
@@ -7,6 +13,7 @@ import { BaasBoxService } from './services/baasbox.service';
 import {enableProdMode} from '@angular/core';
 import { KamuService } from './services/kamu.service';
 
+// Uncomment to enable production mode
 //enableProdMode();
 
 
@@ -16,6 +23,6 @@ bootstrap(AppComponent, [
   BaasBoxService,
   disableDeprecatedForms(),
   provideForms(),
-  KamuService
+  KamuService // By setting KamuService here it's same instance is available throughout the application
 ])
 .catch(err => console.error(err));

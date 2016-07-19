@@ -14,8 +14,8 @@
       <tr *ngFor= "let kamu of kamus">
         <td><a [routerLink]="['/kamulist/' + kamu.mac ]">{{ kamu.mac }}</a></td>
         <td>{{ kamu.enabled }}</td>
-        <td>{{ kamu.enabled }}</td>
-        <td>{{ kamu.enabled }}</td>
+        <td>{{ kamu.swVersion }}</td>
+        <td>{{ kamu.activeProfile }}</td>
       </tr>
     </tbody>
   </table>

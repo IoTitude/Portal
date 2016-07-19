@@ -1,3 +1,7 @@
+/*
+ * Navigation bar component
+ */
+
 import { Component } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
@@ -15,6 +19,7 @@ import { BaasBoxService } from './services/baasbox.service';
 export class NavComponent {
   constructor (private router: Router, private baasBoxService: BaasBoxService) { }
 
+  // Logout user
   logout() {
     this.baasBoxService.logout()
       .then(() => localStorage.removeItem('token'))
