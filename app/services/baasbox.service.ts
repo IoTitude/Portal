@@ -9,7 +9,7 @@ export class BaasBoxService {
 
   constructor (private http: Http) { }
 
-  baseUrl = 'http://82.196.14.4:9000'
+  baseUrl = 'http://192.168.142.37:9000'
   appcode = '1234567890'
 
   login (username: string, password: string) {
@@ -58,6 +58,15 @@ export class BaasBoxService {
 
   updateProfile (kamu: any, datetime: string) {
     let url = this.baseUrl + '/plugin/portal.updateProfile'
+    let body = {
+      kamu: kamu,
+      datetime: datetime
+    }
+    return this.http.put(url, body, { headers: this.getHeaders() }).toPromise()
+  }
+
+  restartKamu (kamu: any, datetime: string) {
+    let url = this.baseUrl + '/plugin/portal.restartKamu'
     let body = {
       kamu: kamu,
       datetime: datetime

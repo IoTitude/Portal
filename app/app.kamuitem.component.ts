@@ -57,13 +57,8 @@ export class KamuItemComponent {
       // TODO: Move datetime to form
       let datetime = "15-07-2016T12:00:00"
       this.baasBoxService.updateVersion(this.kamu, datetime)
-        .then(response => {
-          console.log(response)
-        })
-        .catch(error => {
-          console.log(error.json().message)
-          alert(error)
-        })
+        .then(response => console.log(response))
+        .catch(error => alert(error))
     }
   }
 
@@ -80,17 +75,15 @@ export class KamuItemComponent {
       // TODO: Move datetime to form
       let datetime = "15-07-2016T12:00:00"
       this.baasBoxService.updateProfile(this.kamu, datetime)
-        .then(response => {
-          console.log(response)
-        })
-        .catch(error => {
-          console.log(error.json().message)
-          alert(error)
-        })
+        .then(response => console.log(response))
+        .catch(error => alert(error))
     }
   }
 
-  deleteKamu() {
-    console.log("delete KaMU")
+  restartKamu() {
+    let datetime = "15-07-2016T12:00:00"
+    this.baasBoxService.restartKamu(this.kamu, datetime)
+      .then(response => console.log(response))
+      .catch(error => alert(error))
   }
 };
