@@ -4,28 +4,14 @@
 
   <form>
   <select>
-   <option value="2016">2016</option>
-   <option value="2015">2015</option>
-   <option value="2014">2014</option>
-   <option value="2013">2013</option>
+   <option *ngFor="let year of years">{{ year }}</option>
   </select>
 
   <p>Select month</p>
 
   <select>
-   <option value="Tammikuu">Tammikuu</option>
-   <option value="Helmikuu">Helmikuu</option>
-   <option value="Maaliskuu">Maaliskuu</option>
-   <option value="Huhtikuu">Huhtikuu</option>
-   <option value="Toukokuu">Toukokuu</option>
-   <option value="Kesäkuu">Kesäkuu</option>
-   <option value="Heinäkuu">Heinäkuu</option>
-   <option value="Elokuu">Elokuu</option>
-   <option value="Syyskuu">Syyskuu</option>
-   <option value="Lokakuu">Lokakuu</option>
-   <option value="Marraskuu">Marraskuu</option>
-   <option value="Joulukuu">Joulukuu</option>
- </select><br><br>
+   <option *ngFor="let month of months">{{ month }}</option>
+  </select><br><br>
   <button onclick="location.href = 'http://192.168.142.30:8080/adminkamu/webresources/controller'">Download</button>
   </form>
 
