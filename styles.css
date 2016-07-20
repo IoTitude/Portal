@@ -5,14 +5,22 @@
 
 html, body {
   font-family: Young !important;
+  color: #454C4C !important;
   height: 100%;
   margin: 0px;
   padding: 0px;
-  color: #454C4C;
   }
 
   p {
     font-size: 1.3em;
+  }
+
+  .kamulist-link {
+    color: #55B6BA;
+  }
+
+  .kamulist-link:hover {
+    color: #76CDD7;
   }
 
 .login-page {
@@ -65,12 +73,12 @@ nav {
   }
 
 nav img {
-  height: 9em;
-  width: 9em;
+  height: 7em;
+  width: 7em;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-bottom: 2em;
 }
 
@@ -83,8 +91,8 @@ nav img {
   }
 
 .headerImage {
-  padding-top: 0.5em;
-  height: 9em;
+  padding-top: 1em;
+  height: 7em;
 }
 
 /*kamulist.html*/
@@ -114,23 +122,21 @@ md-card {
   }
 
   .button {
-    font-size: 1.5em;
+    font-size: 1em;
     text-decoration: none;
-    padding: 0.2em 0.2em 0.2em 0.2em;
-    height: 1.8em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     background-color: #76CDD7;
-    color: #FFF;
+    color: #FFFFFF;
     border-radius: 10px;
     border: 0px;
     outline:none;
   }
 
   .button:active {
-    vertical-align: top;
-    padding: 6px 0 0 6px;
-    -webkit-box-shadow: inset 7px 7px 0px 0px #55B6BA;
-    -moz-box-shadow: inset 7px 7px 0px 0px #55B6BA;
-    box-shadow: inset 7px 7px 0px 0px #55B6BA;
+    vertical-align: top
+    -webkit-box-shadow: inset 5px 5px 0px 0px #55B6BA;
+    -moz-box-shadow: inset 5px 5px 0px 0px #55B6BA;
+    box-shadow: inset 5px 5px 0px 0px #55B6BA;
   }
 
   a:hover {
@@ -204,6 +210,7 @@ md-card {
 
   .list-group-item {
     font-size: 1.2em;
+    color: #FFFFFF !important;
     background-color: #76CDD7 !important;
     cursor: default;
     text-decoration: none;
@@ -238,4 +245,8 @@ md-card {
   .md-tab-body {
     overflow: hidden !important;
     height: 20em !important;
+  }
+
+  .md-tab-group {
+    padding-top: 0.5em;
   }
