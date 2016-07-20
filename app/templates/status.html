@@ -1,1 +1,3 @@
-<card-component *ngFor="let service of services"></card-component>
+<section class="status-component">
+  <card-component *ngFor="let service of services" [service]="service"></card-component>
+</section>

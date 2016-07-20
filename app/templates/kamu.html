@@ -1,5 +1,5 @@
-<section>
-  <h1>{{ kamu.mac }}</h1>
+<section class="general-section">
+  <h2>{{ kamu.mac }}</h2>
 
 <p>Spark chart</p>
 
@@ -7,46 +7,44 @@
   <md-tab>
     <template md-tab-label>Update</template>
     <template md-tab-content>
-      <h1>Update KaMU to selected version</h1>
+      <h2>Update KaMU to selected version</h2>
       <p>Current software version: {{ kamu.swVersion }}</p>
       <form>
-        <select (change)="setNewVersion($event.target.value)">
+        <select class="dropdown" (change)="setNewVersion($event.target.value)">
           <option value=""></option>
           <option *ngFor= "let version of versions">{{version.number}}</option>
         </select>
       </form>
       <p></p>
-      <a md-button (click)="updateVersion()">Update</a>
+      <a class="button" (click)="updateVersion()">Update</a>
+      <br>
     </template>
   </md-tab>
   <md-tab>
     <template md-tab-label>Profile</template>
     <template md-tab-content>
-      <h1>Select what profile(s) to use on KaMU</h1>
-        <p>Current profile:</p>
-         <form>
-          <select>
-            <option value="{{kamu.activeProfile}}">{{kamu.activeProfile}}</option>
-          </select>
-        </form>
+      <h2>Select what profile(s) to use on KaMU</h2>
+        <p>Current profile: {{kamu.activeProfile}}</p>
       <div>
         <p>Available profiles:</p>
         <form>
-          <select (change)="setNewProfile($event.target.value)">
+          <select class="dropdown" (change)="setNewProfile($event.target.value)">
             <option value=""></option>
             <option *ngFor= "let profile of profiles">{{profile.name}}</option>
           </select>
         </form>
       </div>
-      <a md-button (click)="updateProfile()">Change profile(s)</a>
+      <a class="button" (click)="updateProfile()">Change profile(s)</a>
+      <br>
     </template>
   </md-tab>
   <md-tab>
     <template md-tab-label>Restart</template>
     <template md-tab-content>
-      <h1>Restart KaMU</h1>
-      <a md-button (click)="restartKamu()">Restart</a>
+      <h2>Restart KaMU</h2>
+      <a class="button" (click)="restartKamu()">Restart</a>
     </template>
+    <br>
   </md-tab>
 </md-tab-group>
 

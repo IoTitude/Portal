@@ -1,8 +1,8 @@
 <div class="login-page">
-  <a href="url"><img src="https://raw.githubusercontent.com/wiki/IoTitude/IOTCity/images/logo/IoTitude_icon.png"></a>
+  <img src="images/portal.png">
   <form class="login-form" #f="ngForm">
-    <input name="username" [(ngModel)]="data.username" type="text" placeholder="username"/><br>
-    <input name="password" [(ngModel)]="data.password" type="password" placeholder="password"/><br>
-    <button (click)="login(data.username, data.password)">login</button>
+    <input name="username" [(ngModel)]="data.username" type="text" placeholder="username"/>
+    <input name="password" [(ngModel)]="data.password" type="password" placeholder="password"/>
+    <button class="button" (click)="login(data.username, data.password)">login</button>
   </form>
 </div>

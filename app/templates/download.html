@@ -1,18 +1,14 @@
-<section>
+<section class="general-section">
   <h1>Download</h1>
   <p>Select year</p>
-
   <form>
-  <select>
+  <select class="dropdown">
    <option *ngFor="let year of years">{{ year }}</option>
   </select>
-
   <p>Select month</p>
-
-  <select>
+  <select class="dropdown">
    <option *ngFor="let month of months">{{ month }}</option>
   </select><br><br>
-  <button onclick="location.href = 'http://192.168.142.30:8080/adminkamu/webresources/controller'">Download</button>
+  <button class="button" onclick="location.href = 'http://192.168.142.30:8080/adminkamu/webresources/controller'">Download</button>
   </form>
-
 </section>

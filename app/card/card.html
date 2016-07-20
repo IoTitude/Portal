@@ -1,11 +1,13 @@
 <md-card>
+  <!--
   <md-card-header>
-    <md-card-title>Header title</md-card-title>
-    <md-card-subtitle>Header subtitle</md-card-subtitle>
+    <md-card-title></md-card-title>
+    <md-card-subtitle></md-card-subtitle>
   </md-card-header>
-  <img md-card-image alt="Main image" src="https://material.angularjs.org/latest/img/washedout.png">
+-->
+  <img md-card-image alt="Main image" src="{{service.image}}" width="200px" height="200px">
   <md-card-content>
-    <md-card-title>Content Title</md-card-title>
-    <p>Here is some content</p>
+    <md-card-title>{{service.name}}</md-card-title>
+    <p>{{service.status}}</p>
   </md-card-content>
 </md-card>
