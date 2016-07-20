@@ -1,49 +1,95 @@
+@font-face {
+  font-family: Young;
+  src: url(young-webfont.woff)
+}
+
 html, body {
+  font-family: Young !important;
   height: 100%;
   margin: 0px;
   padding: 0px;
+  color: #454C4C;
   }
+
+  p {
+    font-size: 1.3em;
+  }
+
+.login-page {
+  margin-top: 10em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-page img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+  width: 15em;
+  height: 15em;
+}
+
+.login-page form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-page form input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+}
+
+.login-page form button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 header {
-  background-color:black;
+  background-color:#55B6BA;
   color:white;
   text-align:center;
-  padding:5px;
+  padding:1em;
+  height: 10em;
   }
+
 nav {
-  line-height:30px;
-  background-color:#eeeeee;
+  background-color:#76CDD7;
   height:100%;
-  width:100px;
+  width:10em;
   float:left;
   padding:5px;
   }
 
-section {
-  padding: 10px;
+nav img {
+  height: 9em;
+  width: 9em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+.general-section {
+  float: left;
+  padding: 2em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   }
+
+.headerImage {
+  padding-top: 0.5em;
+  height: 9em;
+}
 
 /*kamulist.html*/
 .kamulist-section {
   float: left;
-  }
-
-ul {
-  list-style-type: none;
-  }
-
-/*navbar.html*/
-.navlist {
-  display: inline-block;
-  margin-left: -2em;
-  }
-
-li {
-  display: inline-block;
-  }
-
-  /*status.html*/
-.status-section {
-    min-width: 960px;
   }
 
 md-card {
@@ -51,7 +97,7 @@ md-card {
   max-width: 512px;
   }
 
-status-component {
+.status-component {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -65,4 +111,131 @@ status-component {
 .blue md-card-actions {
   display: flex;
   flex-direction: row;
+  }
+
+  .button {
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    height: 1.8em;
+    background-color: #76CDD7;
+    color: #FFF;
+    border-radius: 10px;
+    border: 0px;
+    outline:none;
+  }
+
+  .button:active {
+    vertical-align: top;
+    padding: 6px 0 0 6px;
+    -webkit-box-shadow: inset 7px 7px 0px 0px #55B6BA;
+    -moz-box-shadow: inset 7px 7px 0px 0px #55B6BA;
+    box-shadow: inset 7px 7px 0px 0px #55B6BA;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+    cursor: default;
+  }
+
+  .dropdown {
+    width: 268px;
+    border-radius: 5px;
+    padding: 0px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: url("images/dropdown.png") no-repeat right #FFFFFF;
+    height: 2em;
+    background-size: 2em;
+
+  }
+
+  .status-error {
+    width: 30px;
+    height: 30px;
+    background-color: #FF8080;
+    border-radius: 100%;
+    border: 0px;
+    outline:none;
+    disabled;
+  }
+
+  .status-warning {
+    width: 30px;
+    height: 30px;
+    background-color: #FFEF94;
+    border-radius: 100%;
+    border: 0px;
+    outline:none;
+  }
+
+  .status-ok {
+    width: 30px;
+    height: 30px;
+    background-color: #94D0A8;
+    border-radius: 100%;
+    border: 0px;
+    outline:none;
+  }
+
+  .tile {
+    width: 50px;
+    height: 50px;
+    background-color: #76CDD7;
+    border-radius: 10px;
+    border: 0px;
+    outline:none;
+  }
+
+  .tile:active {
+    vertical-align: top;
+    padding: 6px 0 0 6px;
+    -webkit-box-shadow: inset 7px 7px 0px 0px #55B6BA;
+    -moz-box-shadow: inset 7px 7px 0px 0px #55B6BA;
+    box-shadow: inset 7px 7px 0px 0px #55B6BA;
+  }
+
+  .list-group {
+    background-color:#76CDD7;
+    display:inline-block;
+    width: 100%;
+  }
+
+  .list-group-item {
+    font-size: 1.2em;
+    background-color: #76CDD7 !important;
+    cursor: default;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    border: 0px !important;
+    border-bottom: 1.5px solid #BBEBEF !important;
+    transition: border-bottom 0.3s ease, box-shadow 0.2s ease;
+  }
+
+  .list-group-item:hover {
+    box-shadow: inset 0px -2px #BBEBEF;
+  }
+
+  .list-group-item a {
+    background-color:#76CDD7;
+  }
+
+  .form-control {
+    width: 268px;
+    border-radius: 5px;
+    padding: 0px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: url("../img/dropdown.png") no-repeat right #FFFFFF;
+    height: 2em;
+    background-size: 2em;
+
+  }
+
+  .md-tab-body {
+    overflow: hidden !important;
+    height: 20em !important;
   }

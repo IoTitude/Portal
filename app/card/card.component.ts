@@ -2,7 +2,7 @@
  * Component for creating status cards of the various services linked to the portal
  */
 
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 
 @Component({
@@ -12,4 +12,7 @@ import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
   templateUrl: 'card.html',
   styleUrls: [ 'card.css' ]
 })
-export class CardComponent { }
+export class CardComponent {
+  @Input() service: any;
+  @Input() serviceimages: any;
+ }

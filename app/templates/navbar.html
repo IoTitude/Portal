@@ -1,9 +1,9 @@
 <nav>
-  <img src="https://raw.githubusercontent.com/wiki/IoTitude/IOTCity/images/logo/IoTitude_icon.png" alt="" width="100%">
-  <ul class="navlist">
-    <li><a md-button [routerLink]="['/status']">Status</a></li>
-    <li><a md-button [routerLink]="['/kamulist']">KaMUs</a></li>
-    <li><a md-button [routerLink]="['/download']">Download</a></li>
-    <button md-button (click)="logout()">Logout</button>
+  <img src="images/portal_bgless.png" alt="" width="100%">
+  <ul class="list-group">
+    <li><a class="list-group-item" [routerLink]="['/status']">Status</a></li>
+    <li><a class="list-group-item" [routerLink]="['/kamulist']">KaMUs</a></li>
+    <li><a class="list-group-item" [routerLink]="['/download']">Download</a></li>
+    <li><a class="list-group-item" (click)="logout()">Logout</a></li>
   </ul>
 </nav>
