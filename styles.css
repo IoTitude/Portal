@@ -29,13 +29,33 @@ html, body {
   margin-right: auto;
 }
 
+.loading-div img {
+  margin-top: 15em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  height: 10em;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.loading-div p {
+  text-align: center;
+}
+
 .login-page img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2em;
-  width: 15em;
-  height: 15em;
+  width: 20em;
+  height: 20em;
 }
 
 .login-page form {
