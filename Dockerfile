@@ -2,7 +2,7 @@
 #
 #  $ docker build -t portal .
 #  $ docker run -it --rm -p 3000:3000 -p 3001:3001 portal
-#
+
 FROM node:latest
 
 RUN mkdir -p /portal /home/nodejs && \
