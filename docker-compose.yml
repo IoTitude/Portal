@@ -1,0 +1,9 @@
+# Compose for starting the Portal service
+
+version: '2'
+services:
+  portal:
+    image: iotitude/portal
+    ports:
+      - "3000:3000"
+      - "3001:3001"
