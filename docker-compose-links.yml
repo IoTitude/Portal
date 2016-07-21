@@ -1,0 +1,29 @@
+portal:
+  build: .
+  ports:
+    - "3000:3000"
+    - "3001:3001"
+  links:
+    - baasbox
+
+baasbox-data:
+  image: iotitude/baasbox-data
+  labels:
+    io.rancher.container.start_once: 'true'
+
+baasbox:
+  image: iotitude/baasbox
+  hostname: baasbox
+  volumes_from:
+    - baasbox-data
+  labels:
+    io.rancher.sidekicks: baasbox-data
+  ports:
+    - "9000:9000"
+
+resolvable:
+  image: gliderlabs/resolvable:master
+  hostname: resolvable
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+    - /etc/resolv.conf:/tmp/resolv.conf
