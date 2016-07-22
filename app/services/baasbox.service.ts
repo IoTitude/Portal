@@ -14,7 +14,7 @@ export class BaasBoxService {
   constructor (private http: Http) { }
 
   // Where BaasBox is located. Address of production server should be hidden from GitHub.
-  baseUrl = 'http://baasbox:9000'
+  baseUrl = 'http://baasbox.io:9000'
   appcode = '1234567890'
 
   // Login user
