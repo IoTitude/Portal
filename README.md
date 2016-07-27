@@ -6,6 +6,7 @@
 - [How to install our custom setup to Angular2 app](#how-to-install-our-custom-setup-to-angular2-app)   
 - [angular/material2](#angularmaterial2)   
 - [How to modify ng2-table to allow html to table cells](#how-to-modify-ng2-table-to-allow-html-to-table-cells)   
+- [Zeppelin Graphs](#zeppelin-graphs)   
 
 <!-- /MDTOC -->
 
@@ -153,3 +154,8 @@ to this:
 ```
 
 Now table can shows html correctly.
+
+
+## Zeppelin Graphs
+
+It was planned that the measurement data from a KaMU could be displayed in the KaMU's detail view. Unfortunately Zeppelin didn't have support for our use case. It was possible to create different graphs for different KaMUs but then changing the default graph style from table to something more graphlike was impossible in Zeppelin v0.6.0 through the REST API.
